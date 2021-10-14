@@ -1,0 +1,66 @@
+At LIT, we have various sources of data that we have to join and process to produce a data product that represents the alternative assets universe. In this exercise, you are given two datasets of alternative asset fund data from two different sources and will need to construct SQL queries to first align and if time permits, enable exploration of these funds.
+
+
+What is a Fund?
+
+A Fund is a financial vehicle that allows multiple investors to pool money and invest collectively into a common set of investment goals. The Fund can be managed by a manager/firm and have various metadata /themes around how it invests.
+
+ 
+
+ 
+
+CREATE TABLE fund_a (
+  fund_id varchar(9),
+  fund_name varchar(61),
+  fund_former_name varchar(27),
+  asset_class varchar(15),
+  strategy varchar(13),
+  status varchar(6),
+  investor_id varchar(9),
+  investor varchar(43),
+  investor_phone varchar(21),
+  investor_website varchar(88),
+  investor_email varchar(1),
+  fund_vintage Integer,
+  fund_status varchar(10),
+  fund_size FLOAT,
+  native_currency varchar(3),
+  investor_city varchar(18),
+  investor_state_or_province varchar(16),
+  investor_country varchar(14),
+  investor_post_code varchar(9),
+  preferred_industries varchar(165)
+);
+
+CREATE TABLE fund_b (
+  fund_id Integer,
+  firm_id Integer,
+  name varchar(60),
+  vintage_year Integer,
+  asset_class varchar(20),
+  strategy varchar(20),
+  status varchar(10),
+  fund_size_usd FLOAT,
+  fund_manager varchar(50),
+  industries varchar(549),
+  manager_city varchar(20),
+  manager_state varchar(20),
+  manager_country varchar(20),
+  manager_website varchar(40),
+  manager_email varchar(40),
+  manager_tel varchar(30),
+  manager_fax varchar(30),
+  primary_geographic_focus varchar(40)
+);
+ 
+
+Part 1: Alignment
+
+As part of our data product, we would like to have a singular Dataset of funds that is a combination of the two provided datasets.
+
+ 
+
+
+Part 2: Explore Themes (If time permitting)
+
+To allow our users to explore these funds, we would like to enable the ability to browse different themes that the funds have in common. For example, You might want to browse documentaries on Netflix. Documentaries in this case would be the theme.
